@@ -64,7 +64,7 @@ function buscarDados(PDO $pdo, int $clientId, int $lastDataIndex, int $limit): a
             'id_cliente' => $clientId,
             'data_format_0' => $row['data_format_0'] === null
                 ? null
-                : (float)$row['data_format_0'] / 10,
+                : (float)$row['data_format_0'], // Ajuste de escala para o valor real, divisão por 10 se necessário
             'time@timestamp' => $row['timestamp'] === null
                 ? null
                 : (float)$row['timestamp'],
