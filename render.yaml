@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: api-consumo-dados
+    runtime: docker
+    plan: free
+    healthCheckPath: /health.php
+    envVars:
+      - key: DB_HOST
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false
+      - key: API_KEY
+        sync: false
+      - key: QUERY_LIMIT
+        value: "100"
